@@ -1,0 +1,11 @@
+Some people have asked me why I bothered at all to create the fast_matrix template, where all the dimensions are fixed at compile-time. There are several reasons for this choice:
+
+* It improves data locality since the data can be directly stored inside the structure and not with one level of indirection to the heap
+* It makes vectorization easier for the compiler. All the sizes and therefore the number of iterations of the lopp are known at compile-time, which is a really great information for the compiler who can optimize each loop very well and doesn't have to rely on estimating the number of iterations.
+* Better diagnostics. It makes all the errors come at compile-time. If you try to add two matrices of different sizes, the error won't come at runtime, but at compile-time, which makes it much better.
+* I knew the sizes of the matrices I was working for at compile-time
+* It is more fun to implement. Yes, I love templates and TMP :)
+
+Of course, there is a caveat: It takes longer to compile. 
+
+If you are not interested in fast_matrix/fast_vector, the dyn_matrix/dyn_vector templates do have exactly the same features but the size is computed at runtime only. If you don't know the size of your data structures or if you want to reduce compile-time, this is the way to go. 
