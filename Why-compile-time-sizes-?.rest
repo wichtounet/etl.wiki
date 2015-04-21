@@ -9,3 +9,5 @@ Some people have asked me why I bothered at all to create the fast_matrix templa
 Of course, there is a caveat: It takes longer to compile. 
 
 If you are not interested in fast_matrix/fast_vector, the dyn_matrix/dyn_vector templates do have exactly the same features but the size is computed at runtime only. If you don't know the size of your data structures or if you want to reduce compile-time, this is the way to go. 
+
+Moreover, the fast_dyn_matrix alias is also available. This version of a matrix has compile-time sizes but uses a vector and not an array and therefore is very fast to move, contrary to the fast_matrix which is moved in O(n).
