@@ -1,0 +1,104 @@
+.. role:: cpp(code)
+   :language: C++
+
+ETL supports several data structures.
+
+Vector do not have their own data structures but are matrix with one dimension.
+
+Dynamic Matrix (dyn_matrix)
+###########################
+
+A dynamic matrix is a matrix whose size is only known at runtime. The elements are stored on a secondary storage, therefore, they can be used on the stack and can be very efficiently moved. The dimensions of a dynamic matrix can not change (the only exceptions being assignment between matrices and swap operations).
+
+:cpp:`etl::dyn_matrix<T>` is the most common type in ETL. It a 2D matrix with elements of type :cpp:`T` and its elements are stored in row major order (:cpp:`etl::dyn_matrix_cm<T>` is the column-major equivalent)..
+
+The dimensions of the matrix must be specified through the constructor. For instance, to declare a matrix of size `[3,2]`:
+
+.. code:: c++
+
+   etl::dyn_matrix<double> matrix(3, 2);
+
+To declare a matrix with more dimensions, the number of dimensions must be set accordingly. For instance, a matrix of size `[100, 200, 50]`:
+
+.. code:: c++
+
+   etl::dyn_matrix<double, 3> matrix(100, 200, 50);
+   //                      ^ Number of dimensions
+
+You can use as many dimensions as you want. All the data will be stored in contiguous storage.
+
+By default, the matrix will be filled with zero. You can directly fill it with a value of your choices:
+
+.. code:: c++
+
+   etl::dyn_matrix<double> matrix(3, 2, 66.66);
+
+will be filled with :cpp:`66.66`.
+
+You can also define the values of matrix:
+
+.. code:: c++
+
+    etl::dyn_matrix<double> matrix(3, 2, etl::values(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
+    etl::dyn_matrix<double> matrix(3, 2, std::initializer_list<Z>({1.0, 2.0, 3.0, 4.0, 5.0, 6.0}));
+
+:cpp:`dyn_vector<T>` is an alias for :cpp:`dyn_matrix<T, 1>`. You can initialize a vector in the same way you initialize a matrix. You can also directly initialize a vector from an initializer list:
+
+.. code:: c++
+
+    etl::dyn_vector<Z> test_vector({1.0, 2.0, 3.0});
+
+In this case, the dimension of the vector will be set to 3.
+
+Static Matrix (fast_matrix)
+###########################
+
+A static matrix is matrix whose size is known at compile-time. The elements are stored directly inside the structure. It makes for a better locality, but it means that static matrices are not efficiently moveable and may be too large to be used on the stack. The size of a dynamic matrix can never change.
+
+:cpp:`etl::fast_matrix<T, Dims...>` is the most common type for static matrix in ETL. It is a matrix of elements of type :cpp:`T` and its element are stored in row major order (:cpp:`etl::fast_matrix_cm<T, Dims...>` is the column major equivalent).
+
+They can be constructed with no argument, for instance for a matrix of size `[2, 3]`:
+
+.. code:: c++
+
+   etl::fast_matrix<double, 2, 3> matrix;
+
+The default is 0 and it can be changed:
+
+.. code:: c++
+
+   etl::fast_matrix<double, 2, 3> matrix(66.66).
+
+will be filled with :cpp:`66.66`.
+
+The values can also be set directly:
+
+.. code:: c++
+
+    etl::fast_matrix<Z, 2, 2> matrix = {1.0, 3.0, 5.0, 2.0};
+
+:cpp:`fast_vector<T, D>` is an alias for :cpp:`fast_matrix`. For instance, for a vector of 1000 elements:
+
+.. code:: c++
+
+   etl::fast_vector<double, 1000> a;
+   etl::fast_matrix<double, 1000> b;
+
+(both declarations are completely equivalent).
+
+Hybrid Matrix (fast_dyn_matrix)
+###############################
+
+An hybrid matrix is matrix whose size is known at compile-time but its elements are stored in a secondary storage and as such is very efficient to move and can be used on the stack. It combines advantages of both dynamic and static matrix types.
+
+:cpp:`fast_dyn_matrix<T, Dims...>` is the implementation type for hybrid matrix.
+
+Its usage is exactly the same as a static matrix, you can refer to the previous section for more information.
+
+Choose a data structure
+#######################
+
+The first question to ask to choose a data structure is whether the sizes will be known at compile-time or not.
+
+1. If the sizes are not known, you have to use cpp:`etl:dyn_matrix`. By default, all matrices are row-major, but if you really need column-major order you have to use :cpp:`etl::dyn_matrix_cm`.
+2. If the sizes are only knwon at runtime, you can use static matrix. If you want a moveable type, use :cpp:`fast_dyn_matrix`, if you want data stored directly inside the type, you can use :cpp:`fast_matrix`.
