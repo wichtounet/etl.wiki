@@ -4,6 +4,7 @@
   * `Data Types <https://github.com/wichtounet/etl/wiki/Data-Types>`_
   * `Element wise operations <https://github.com/wichtounet/etl/wiki/Element-Wise-Operations>`_
   * `Unary operations <https://github.com/wichtounet/etl/wiki/Unary-Operations>`_
+  * `Lazy Evaluation <https://github.com/wichtounet/etl/wiki/Lazy-Evaluation>`_
   * `Configuration <https://github.com/wichtounet/etl/wiki/Configuration>`_
 
 * `The project <https://github.com/wichtounet/etl/wiki/Home>`_
