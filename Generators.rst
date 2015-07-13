@@ -1,0 +1,16 @@
+.. role:: cpp(code)
+   :language: C++
+
+It is also possible to generate sequences of data and perform
+operations on them.
+
+For now, two generators are available:
+
+* normal_generator: Generates real numbers distributed on a normal
+  distribution
+* sequence_generator(c=0): Generates numbers in sequence from c
+
+All sequences are considered to have infinite size, therefore, they
+can be used to initialize or modify any containers or expressions.
+Since they have no size they cannot be used for operations that work
+on some dimensions only (multiplication, convolution, ...).
