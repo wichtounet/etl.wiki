@@ -18,4 +18,5 @@
 
   * `Smart Expression Templates <https://github.com/wichtounet/etl/wiki/SmartExpressionTemplates>`_
   * `Expression Types <https://github.com/wichtounet/etl/wiki/Expressions-Types>`_
+  * `Optimize Expressions <https://github.com/wichtounet/etl/wiki/Optimize-Expressions>`_
   * `Why compile time sizes ? <https://github.com/wichtounet/etl/wiki/Why-compile-time-sizes-%3F>`_
