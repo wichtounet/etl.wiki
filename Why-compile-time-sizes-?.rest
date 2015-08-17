@@ -3,8 +3,8 @@ Some people have asked me why I bothered at all to create the fast_matrix templa
 * It improves data locality since the data can be directly stored inside the structure and not with one level of indirection to the heap
 * It makes vectorization easier for the compiler. All the sizes and therefore the number of iterations of the loop are known at compile-time, which is a really great information for the compiler who can optimize each loop very well and doesn't have to rely on estimating the number of iterations.
 * Better diagnostics. It makes all the errors come at compile-time. If you try to add two matrices of different sizes, the error won't come at runtime, but at compile-time, which makes it much better.
-* I knew the sizes of the matrices I was working for at compile-time
-* It is more fun to implement. Yes, I love templates and TMP :)
+* I knew the sizes of the matrices I was working with, at compile-time
+* It is more fun to implement (Yes, I love templates and TMP :) )
 
 Of course, there is a caveat: It takes longer to compile. 
 
