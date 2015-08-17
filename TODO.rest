@@ -8,22 +8,24 @@ FFT
 The FFT implementation is fairly good, yet several things could be improved
 
 * A 6-point transform module could be added to improve performance further
-* There is still room for improvememnt in some transform modules
+* There is still room for improvement in some transform modules
 * The Inverse FFT implementation should not make multiple pass over the data, this mean that the conjugate should be done directly inside the transform modules based on a function parameter
 
 GPU
 ###
 
-The GPU support is quite small for now (FFT and GEMM), other routines could be faster using GPU.
+The GPU support is quite small for now (FFT and GEMM), other routines could be faster using GPU, especially convolutions and maybe pooling. 
 
 Matrix Multiplication
 #####################
 
 1. An efficient implementation for floats and complex numbers would greatly benefit the library.
-2. An AVX-optimized matrix algorith for double would be of great value
+2. An AVX-optimized matrix multiplication algorithm for double would be of great value
 3. Improving the standard multiplication algorithm for complex numbers would be a great improvement as well.
 
 Misc
 ####
 
-1. Finding ways to reduce the compile-time overhead of the library expressions
+1. Reduce the compile-time overhead of the library expressions
+2. Fix the exponential template instantiation issue of the optimizer
+3. Improve performance of out of place matrix transposition
