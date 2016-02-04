@@ -12,7 +12,7 @@ is exactly the same as:
 
 but the second version saves multiplications, additions and two matrix copy.
 
-In ETL, you can use the function opt to ensure that an expression will be optimized prior to assignment:
+In ETL, you can use the function opt to ensure that an expression will be optimized before being evaluated:
 
 .. code:: c++
 
