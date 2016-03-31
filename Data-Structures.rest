@@ -100,5 +100,5 @@ Choose a data structure
 
 The first question to ask to choose a data structure is whether the sizes will be known at compile-time or not.
 
-1. If the sizes are not known, you have to use cpp:`etl:dyn_matrix`. By default, all matrices are row-major, but if you really need column-major order you have to use :cpp:`etl::dyn_matrix_cm`.
-2. If the sizes are only knwon at runtime, you can use static matrix. If you want a moveable type, use :cpp:`fast_dyn_matrix`, if you want data stored directly inside the type, you can use :cpp:`fast_matrix`.
+1. If the sizes are not known, you have to use :cpp:`etl:dyn_matrix`. By default, all matrices are row-major, but if you really need column-major order you have to use :cpp:`etl::dyn_matrix_cm`.
+2. If the sizes are known at compile-time, you can use :cpp:`etl::fast_matrix`. If you want a moveable type, use :cpp:`etl::fast_dyn_matrix`. :cpp:`etl::dyn_matrix` can of course also be  used. 
