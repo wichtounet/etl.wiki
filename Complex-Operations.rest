@@ -43,11 +43,11 @@ convolution, that are used if ETL_VECTORIZE_IMPL has been defined.
 Fast Fourrier Transform
 #######################
 
-If MKL library support is enabled, Fast Fourrier Transform
-operations are available:
+Fast Fourrier Transform operations are available:
 
 * fft_1d(vector) : Returns the FFT of the given vector
 * ifft_1d(vector) : Returns Inverse FFT of the given vector
 * fft_2d(matrix) : Returns the FFT of the given 2D matrix
 * ifft_2d(matrix) : Returns Inverse FFT of the given 2D matrix
-
+* fft_1d_many(matrix) : Batched 1D FFT of the given matrix (the first dimension is considered as batch dimension)
+* fft_2d_many(matrix) : Batched 2D FFT of the given matrix (the first dimension is considered as batch dimension)
