@@ -6,4 +6,4 @@ If you want to contribute, there are several ways:
 * You can directly propose a Pull Request on this site
 * You can contact me if you want information on how to contribute or what to contribute (my email is `on my profile <https://github.com/wichtounet>`_)
 
-Here are `some ideas for contributions <https://github.com/wichtounet/etl/wiki/TODO>`_. 
+If you are looking for ideas, here are `some ideas for contributions <https://github.com/wichtounet/etl/wiki/TODO>`_. You can contact me for more ;) 
