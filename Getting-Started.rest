@@ -6,7 +6,7 @@ you just have to include its header files.
 
 Most of the headers are not meant to be included directly inside a problem. Here are the header that are made to be included:
 
-* etl.hpp: Contains all the features of the library
-* etl_light.hpp: Contains the basic features of the library (no matrix multiplication, no convolution, no FFT)
+* ``etl.hpp``: Contains all the features of the library
+* ``etl_light.hpp``: Contains the basic features of the library (no matrix multiplication, no convolution, no FFT, ...). It may save you some compilation time. 
 
 You should always include one of these headers in your program.
