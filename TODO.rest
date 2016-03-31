@@ -17,7 +17,7 @@ GPU (alpha)
 
 The GPU support is quite alpha quality and small for now (FFT and GEMM), other routines could be faster using GPU, especially convolutions and maybe pooling.
 
-The optimization of GPU temporaries is currently being reworked and may cause some issues. 
+The optimization of GPU temporaries should be going further. 
 
 Matrix Multiplication
 #####################
