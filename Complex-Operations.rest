@@ -73,6 +73,19 @@ Versions with flipped kernels also exists:
 * :code:`C = conv_2d_full_multi_flipped(A, B)` or :code:`conv_2d_full_multi_flipped(A, B, C)`: Full convolution of A and B
 * :code:`C = conv_2d_same_multi_flipped(A, B)` or :code:`conv_2d_same_multi_flipped(A, B, C)`: Same convolution of A and B
 
+'4D' convolutions
++++++++++++++++++
+
+If you have multiple images and multiple kernels, you can use '4D' convolutions that performs multiple 2D convolutions and accumulation under the hood. These operations are the ones used in Convolutional Neural Networks.
+
+* conv_4d_valid with A[N, C, Hi, Wi], B[K, C, Hf, Wf] and C[N, K, Hi - Hf + 1, Wi - Wf + 1]
+* conv_4d_full with A[N, C, Hi, Wi], B[K, C, Hf, Wf] and C[N, K, Hi - Hf + 1, Wi - Wf + 1]
+
+Flipped versions are also available: 
+
+* conv_4d_valid_flipped with A[N, C, Hi, Wi], B[K, C, Hf, Wf] and C[N, K, Hi - Hf + 1, Wi - Wf + 1]
+* conv_4d_full_flipped with A[N, C, Hi, Wi], B[K, C, Hf, Wf] and C[N, K, Hi - Hf + 1, Wi - Wf + 1]
+
 Deep 2D Convolutions
 ++++++++++++++++++++
 
