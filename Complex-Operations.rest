@@ -56,6 +56,17 @@ To perform a cross correlation or if the weights are already flipped:
 * :code:`C = conv_2d_full_flipped(A, B)` or :code:`conv_2d_full_flipped(A, B, C)`: Full cross correlation of A and B
 * :code:`C = conv_2d_same_flipped(A, B)` or :code:`conv_2d_same_flipped(A, B, C)`: Same cross correlation of A and B
 
+Deep 2D Convolutions
+++++++++++++++++++++
+
+If you have multiple convolutions, you can use the deep versions of the expressions. For instance, if you want to perform N 'same' convolutions of A[N, 2, 2], B[N, 2, 2], C[N, 2, 2] or with more dimensions (for instance, A[N, K, 2, 2], B[N, K, 2, 2], C[N, K, 2, 2]). In all cases, the 'batch' dimensions must be the same for all 3 structures. 
+
+* :code:`C = conv_deep_valid(A, B)` or :code:`conv_deep_valid(A, B, C)`
+* :code:`C = conv_deep_full(A, B)` or :code:`conv_deep_full(A, B, C)`
+* :code:`C = conv_deep_same(A, B)` or :code:`conv_deep_same(A, B, C)`
+
+Take into account that this is not highly optimized and is simply performing multiple 2D convolutions on sub structures.
+
 Fast Fourrier Transform
 #######################
 
