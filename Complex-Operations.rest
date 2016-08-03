@@ -28,17 +28,27 @@ But it is nowhere as optimized as a BLAS operation.
 Convolution
 ###########
 
-Implementation of valid, same and full convolutions are available:
+ETL implements a rich set of convolution functions. 
 
-* conv_1d_valid, conv_2d_valid : Valid convolution of a vector or a matrix
-* conv_1d_same, conv_2d_same : Same convolution of a vector or a matrix
-* conv_1d_full, conv_2d_full : Full convolution of a vector or a matrix
+ETl contains several implementations of each algorithm and will try to select the fastest algorithm depending on the availabilility of SSE/AVX/BLAS/CUDA/MKL. 
 
-  * fft_conv_1d_full, fft_conv_2d_full : Full convolution by using FFT
-  * fast_conv_1d_full, fast_conv_2d_full : Full convolution by using FFT if available, normal implementation otherwise
+1D Convolution
+++++++++++++++
 
-ETL contains vectorized (SSE and AVX) implementations of each
-convolution, that are used if ETL_VECTORIZE_IMPL has been defined.
+1-dimensional convolution of vectors is directly possible: 
+
+* :code:`c = conv_1d_valid(a, b)` or :code:`conv_1d_valid(a, b, c)`: Valid convolution of a and b
+* :code:`c = conv_1d_full(a, b)` or :code:`conv_1d_full(a, b, c)`: Full convolution of a and b
+* :code:`c = conv_1d_same(a, b)` or :code:`conv_1d_same(a, b, c)`: Same convolution of a and b
+
+2D Convolution
+++++++++++++++
+
+2-dimensional convolution of matrices is directly possible as well:
+
+* :code:`C = conv_2d_valid(A, B)` or :code:`conv_2d_valid(A, B, C)`: Valid convolution of A and B
+* :code:`C = conv_2d_full(A, B)` or :code:`conv_2d_full(A, B, C)`: Full convolution of A and B
+* :code:`C = conv_2d_same(A, B)` or :code:`conv_2d_same(A, B, C)`: Same convolution of A and B
 
 Fast Fourrier Transform
 #######################
