@@ -50,6 +50,12 @@ ETl contains several implementations of each algorithm and will try to select th
 * :code:`C = conv_2d_full(A, B)` or :code:`conv_2d_full(A, B, C)`: Full convolution of A and B
 * :code:`C = conv_2d_same(A, B)` or :code:`conv_2d_same(A, B, C)`: Same convolution of A and B
 
+To perform a cross correlation or if the weights are already flipped:
+
+* :code:`C = conv_2d_valid_flipped(A, B)` or :code:`conv_2d_valid_flipped(A, B, C)`: Valid convolution of A and B
+* :code:`C = conv_2d_full_flipped(A, B)` or :code:`conv_2d_full_flipped(A, B, C)`: Full convolution of A and B
+* :code:`C = conv_2d_same_flipped(A, B)` or :code:`conv_2d_same_flipped(A, B, C)`: Same convolution of A and B
+
 Fast Fourrier Transform
 #######################
 
