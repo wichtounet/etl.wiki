@@ -1,6 +1,6 @@
-This page contains a list of things that could be done to improve this project.
+This page contains a list of things that could be done to improve this project. This list is not exhaustive by any means, there are a lot of other possible contributions. 
 
-If someone is interested in participating in one of these tasks, don't hesitate to contact me or to open a Pull Request
+If someone is interested in participating in one of these tasks, don't hesitate to contact me or to open a Pull Request. 
 
 FFT
 ###
