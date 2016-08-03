@@ -56,6 +56,23 @@ To perform a cross correlation or if the weights are already flipped:
 * :code:`C = conv_2d_full_flipped(A, B)` or :code:`conv_2d_full_flipped(A, B, C)`: Full cross correlation of A and B
 * :code:`C = conv_2d_same_flipped(A, B)` or :code:`conv_2d_same_flipped(A, B, C)`: Same cross correlation of A and B
 
+Convolutions with multiple kernels
+++++++++++++++++++++++++++++++++++
+
+If you need to convolve one input with multiple kernels, you can use the multi versions of the expressions:
+
+* :code:`C = conv_2d_valid_multi(A, B)` or :code:`conv_2d_valid_multi(A, B, C)`: Valid convolution of A and B
+* :code:`C = conv_2d_full_multi(A, B)` or :code:`conv_2d_full_multi(A, B, C)`: Full convolution of A and B
+* :code:`C = conv_2d_same_multi(A, B)` or :code:`conv_2d_same_multi(A, B, C)`: Same convolution of A and B
+
+A is a 2D matrix whereas B and C must be 3D matrices. 
+
+Versions with flipped kernels also exists:
+
+* :code:`C = conv_2d_valid_multi_flipped(A, B)` or :code:`conv_2d_valid_multi_flipped(A, B, C)`: Valid convolution of A and B
+* :code:`C = conv_2d_full_multi_flipped(A, B)` or :code:`conv_2d_full_multi_flipped(A, B, C)`: Full convolution of A and B
+* :code:`C = conv_2d_same_multi_flipped(A, B)` or :code:`conv_2d_same_multi_flipped(A, B, C)`: Same convolution of A and B
+
 Deep 2D Convolutions
 ++++++++++++++++++++
 
