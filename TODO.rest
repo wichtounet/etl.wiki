@@ -24,6 +24,8 @@ A full GPU mode would be very interesting. Indeed, at this point, the GPU result
 Matrix Multiplication
 #####################
 
+When BLAS is not present, matrix multiplication is not efficient enough. It must be made much faster. 
+
 1. An efficient implementation for floats and complex numbers would greatly benefit the library.
 2. An AVX-optimized matrix multiplication algorithm for double would be of great value
 3. Improving the standard multiplication algorithm for complex numbers would be a great improvement as well.
