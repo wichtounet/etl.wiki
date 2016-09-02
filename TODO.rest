@@ -37,3 +37,4 @@ Misc
 2. Fix the combinatorial template instantiation issue of the optimizer
 3. Implement some of the optimizer optimizations in the evaluator
 4. Improve performance of out of place matrix transposition
+5. Column major optimizations
