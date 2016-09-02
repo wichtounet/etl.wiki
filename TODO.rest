@@ -38,3 +38,4 @@ Misc
 3. Implement some of the optimizer optimizations in the evaluator
 4. Improve performance of out of place matrix transposition
 5. Column major optimizations
+6. Complete the Reference documentation with more information and make sure every supported operation is present.
