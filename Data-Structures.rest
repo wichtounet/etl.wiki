@@ -5,6 +5,8 @@ ETL supports several data structures.
 
 Vector do not have their own data structures but are matrix with one dimension.
 
+ETL supports both row major and column major storage, but is highly optimized toward row-major right now. 
+
 Dynamic Matrix (dyn_matrix)
 ###########################
 
