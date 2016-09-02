@@ -16,6 +16,7 @@ Available operators:
 * exp
 * softplus
 * bernoulli
+* sigmoid
 
 Operations can easily be combined:
 
