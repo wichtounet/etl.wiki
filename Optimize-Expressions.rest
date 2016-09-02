@@ -20,4 +20,4 @@ In ETL, you can use the function opt to ensure that an expression will be optimi
 
 In this case, it will be execute directly as a matrix multiplication of A and B.
 
-While the gain can be very noticeable, it has a great impact on compilation time. If you use opt on complex expressions, compilation of the expression can be more than one order of magnitude slower. This is why optimization is not enabled by default in ETL.
+While the gain can be very noticeable, it has a great impact on compilation time. It is in fact combinatorial in the number of possible expressions in ETL. If you use opt on complex expressions, compilation of the expression can be several orders of magnitude slower. This is why optimization is not enabled by default in ETL.
