@@ -34,5 +34,6 @@ Misc
 ####
 
 1. Reduce the compile-time overhead of the library expressions
-2. Fix the exponential template instantiation issue of the optimizer
-3. Improve performance of out of place matrix transposition
+2. Fix the combinatorial template instantiation issue of the optimizer
+3. Implement some of the optimizer optimizations in the evaluator
+4. Improve performance of out of place matrix transposition
