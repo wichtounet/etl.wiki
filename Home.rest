@@ -12,3 +12,5 @@ The library supports numerous features:
 * Fast Fourrier Transform
 * Symmetric matrix adapter (experimental)
 * Sparse matrix (experimental)
+
+If you are new to this project, I recommend reading `Getting Started <https://github.com/wichtounet/etl/wiki/Getting-Started>`_.
