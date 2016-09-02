@@ -3,10 +3,16 @@ ETL can be configured with several macros:
 * ``ETL_VECTORIZE_IMPL``: Enable vectorized implementations of some algorithms
 * ``ETL_VECTORIZE_EXPR``: Allow ETL to vectorize all expressions when possible (for instance r = a + b / c)
 * ``ETL_VECTORIZE_FULL``: Shortcut for ``ETL_VECTORIZE_IMPL`` and ``ETL_VECTORIZE_EXPR``
-* ``ETL_BLAS_MODE``: Allow the use of a BLAS library (through cblas). A BLAS library must be installed.
+* ``ETL_BLAS_MODE``: Allow the use of a BLAS library (through cblas). A BLAS library must be installed and compilation flags must be configured accordingly. 
 * ``ETL_MKL_MODE``: Allow the use of Intel MKL-specific functions to tune some algorithms (currently online inplace matrix transposition and FFT)
-* ``ETL_NO_TEMPORARY``: Prevent expressions from creating temporaries. This is likely to slow down computations.
-* ``ETL_ELEMENT_WISE_MULTIPLICATION``: When this option is activated, a * b always results in element wise multiplication
+* ``ETL_ELEMENT_WISE_MULTIPLICATION``: When this option is activated, a * b always result in element wise multiplication by default and etl::mul(a, b) in a matrix matrix multiplication
 * ``ETL_STRICT_DIV``: Prevent ETL from using multiplication to perform division
-* ``ETL_UNROLL_VECT``: Tell ETL to unroll vectorized loops
-* ``ETL_UNROLL_NON_VECT``: Tell ETL to unroll normal loops
+* ``ETL_NO_UNROLL_VECT``: Tell ETL not to unroll vectorized loops
+* ``ETL_NO_UNROLL_NON_VECT``: Tell ETL not to unroll normal loops
+* ``ETL_CONV_VALID_FFT``: Allow ETL to use FFT for valid convolutions
+* ``ETL_PARALLEL``: Allow ETL to automatically parallelize some expression
+* ``ETL_CUBLAS_MODE``: Allow the use of NVIDIA CUBLAS library. CUBLAS must be installed and compilation flags must be configured accordingly. 
+* ``ETL_CUFFT_MODE``: Allow the use of NVIDIA CUFFT library. CUFFT must be installed and compilation flags must be configured accordingly. 
+* ``ETL_CUDNN_MODE``: Allow the use of NVIDIA CUDNN library. CUDNN must be installed and compilation flags must be configured accordingly. 
+* ``ETL_MAX_WORKSPACE``: Sets the size (in bytes) of the maximum memory that ETL is allowed to allocate to speed up some operations
+* ``ETL_CUDNN_MAX_WORKSPACE``: Sets the size (in bytes) of the maximum GPU memory that ETL is allowed to allocate to speed up some CUDNN operations
