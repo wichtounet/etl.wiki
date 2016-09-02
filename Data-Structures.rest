@@ -55,7 +55,7 @@ In this case, the dimension of the vector will be set to 3.
 Static Matrix (fast_matrix)
 ###########################
 
-A static matrix is matrix whose size is known at compile-time. The elements are stored directly inside the structure. It makes for a better locality, but it means that static matrices are not efficiently moveable and may be too large to be used on the stack. The size of a dynamic matrix can never change.
+A static matrix is matrix whose size is known at compile-time. The elements are stored directly inside the structure. It makes for a better locality, but it means that static matrices are not efficiently moveable and may be too large to be used on the stack. The size of a dynamic matrix can never change. For a rationale, you have a look at `Why compile time sizes ? <https://github.com/wichtounet/etl/wiki/Why-compile-time-sizes-%3F>`_
 
 :cpp:`etl::fast_matrix<T, Dims...>` is the most common type for static matrix in ETL. It is a matrix of elements of type :cpp:`T` and its element are stored in row major order (:cpp:`etl::fast_matrix_cm<T, Dims...>` is the column major equivalent).
 
