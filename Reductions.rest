@@ -1,0 +1,10 @@
+.. role:: cpp(code)
+   :language: C++
+
+Several reduction functions are available:
+
+* :cpp:`sum`: Return the sum of a data structure
+* :cpp:`mean`: Return the mean of a data structure
+* :cpp:`dot`: Return the dot product of two vectors
+* :cpp:`min`: Returns the minimal value of a data structure
+* :cpp:`max`: Returns the maximal value of a data structure
