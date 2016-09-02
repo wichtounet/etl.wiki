@@ -23,14 +23,14 @@ An implementation of Strassen algorithm is also available:
 
     etl::fast_matrix<T, 2, 2> c = etl::strassen_mmul(a, b);
 
-But it is nowhere as optimized as a BLAS operation.
+But it is nowhere as optimized as a BLAS operation. Although it is theoretically faster (O(n^2.8074) < O(n^3)) than a standard matrix matrix multiplication algorithm, in practice it's much slower. 
 
 Convolution
 ###########
 
 ETL implements a rich set of convolution functions. 
 
-ETl contains several implementations of each algorithm and will try to select the fastest algorithm depending on the availabilility of SSE/AVX/BLAS/CUDA/MKL. 
+ETl contains several implementations of each algorithm and will try to select the fastest algorithm depending on the availability of SSE/AVX/BLAS/CUDA/MKL. 
 
 1D Convolution
 ++++++++++++++
@@ -56,6 +56,10 @@ To perform a cross correlation or if the weights are already flipped:
 * :code:`C = conv_2d_full_flipped(A, B)` or :code:`conv_2d_full_flipped(A, B, C)`: Full cross correlation of A and B
 * :code:`C = conv_2d_same_flipped(A, B)` or :code:`conv_2d_same_flipped(A, B, C)`: Same cross correlation of A and B
 
+Valid convolutions have support for stride and padding: 
+
+* :code:`C = conv_2d_valid<S1, S2, P1, P2>(A, B)` or :code:`C = conv_2d_valid(A, B, S1, S2, P1, P2)`: Valid convolution of A and B with a stride of (S1, S2) and padding of (P1, P2).
+
 Convolutions with multiple kernels
 ++++++++++++++++++++++++++++++++++
 
@@ -72,6 +76,8 @@ Versions with flipped kernels also exists:
 * :code:`C = conv_2d_valid_multi_flipped(A, B)` or :code:`conv_2d_valid_multi_flipped(A, B, C)`: Valid convolution of A and B
 * :code:`C = conv_2d_full_multi_flipped(A, B)` or :code:`conv_2d_full_multi_flipped(A, B, C)`: Full convolution of A and B
 * :code:`C = conv_2d_same_multi_flipped(A, B)` or :code:`conv_2d_same_multi_flipped(A, B, C)`: Same convolution of A and B
+
+Padding and stride is also possible. 
 
 '4D' convolutions
 +++++++++++++++++
@@ -108,3 +114,5 @@ Fast Fourrier Transform operations are available:
 * ifft_2d(matrix) : Returns Inverse FFT of the given 2D matrix
 * fft_1d_many(matrix) : Batched 1D FFT of the given matrix (the first dimension is considered as batch dimension)
 * fft_2d_many(matrix) : Batched 2D FFT of the given matrix (the first dimension is considered as batch dimension)
+
+Depending on the configuration, they can be computed using either the standard implementation of ETL, the implementation of the Intel MKL or the implementation of CUFFT. 
