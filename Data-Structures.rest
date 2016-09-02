@@ -29,7 +29,7 @@ To declare a matrix with more dimensions, the number of dimensions must be set a
 
 You can use as many dimensions as you want. All the data will be stored in contiguous storage.
 
-By default, the matrix will be filled with zero. You can directly fill it with a value of your choices:
+By default, the matrix memory is not initalized. You can directly fill it with a value of your choices:
 
 .. code:: c++
 
