@@ -13,4 +13,4 @@ For now, two generators are available:
 All sequences are considered to have infinite size, therefore, they
 can be used to initialize or modify any containers or expressions.
 Since they have no size they cannot be used for operations that work
-on some dimensions only (multiplication, convolution, ...).
+on fixed dimensions only such as matrix multiplication or convolution.
