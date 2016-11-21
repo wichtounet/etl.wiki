@@ -30,10 +30,17 @@ When BLAS is not present, matrix multiplication is not efficient enough. It must
 2. An AVX-optimized matrix multiplication algorithm for double would be of great value
 3. Improving the standard multiplication algorithm for complex numbers would be a great improvement as well.
 
+Advanced padding
+################
+
+Currently, ETL only pads the complete size of vector or a matrix to a multiple of the vector size. 
+
+A lot of performance can be gained in algorithms since everything will be aligned and a lot of loops can be removed. 
+
 Misc
 ####
 
-1. Reduce the compile-time overhead of the library expressions
+1. *Reduce the compile-time overhead of the library expressions*
 2. Fix the combinatorial template instantiation issue of the optimizer
 3. Implement some of the optimizer optimizations in the evaluator
 4. Improve performance of out of place matrix transposition
