@@ -2,6 +2,16 @@ This page contains a list of things that could be done to improve this project. 
 
 If someone is interested in participating in one of these tasks, don't hesitate to contact me or to open a Pull Request. 
 
+Integers
+########
+
+Currently ETL is mainly optimized for floating points, both in a single and double precision. It is also a bit optimized for complex numbers. However, it is not optimized for integers which are not vectorized and cannot be handled by BLAS library so far. 
+
+Several things should be done to improve this state:
+
+* Operations on integers should be vectorized
+* Operations on integers should be able to pass to BLAS libraries 
+
 FFT
 ###
 
