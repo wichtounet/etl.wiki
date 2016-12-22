@@ -32,6 +32,7 @@ The optimization of GPU temporaries should be going further.
 A full GPU mode would be very interesting. Indeed, at this point, the GPU result is always going back to CPU after the evaluation of the operation. It should only be going back to CPU if necessary by an algorithm or for printing.
 
 Operations that could be performed on GPU:
+
 * Reductions (sum, max, min, ...)
 * Scalar operations on matrices
 * ...
