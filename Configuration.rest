@@ -5,7 +5,6 @@ ETL can be configured with several macros:
 * ``ETL_VECTORIZE_FULL``: Shortcut for ``ETL_VECTORIZE_IMPL`` and ``ETL_VECTORIZE_EXPR``
 * ``ETL_BLAS_MODE``: Allow the use of a BLAS library (through cblas). A BLAS library must be installed and compilation flags must be configured accordingly. 
 * ``ETL_MKL_MODE``: Allow the use of Intel MKL-specific functions to tune some algorithms (currently online inplace matrix transposition and FFT)
-* ``ETL_ELEMENT_WISE_MULTIPLICATION``: When this option is activated, a * b always result in element wise multiplication by default and etl::mul(a, b) in a matrix matrix multiplication
 * ``ETL_STRICT_DIV``: Prevent ETL from using multiplication to perform division
 * ``ETL_NO_UNROLL_VECT``: Tell ETL not to unroll vectorized loops
 * ``ETL_NO_UNROLL_NON_VECT``: Tell ETL not to unroll normal loops
